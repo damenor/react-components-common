@@ -1,5 +1,5 @@
 {
-  "name": "common",
+  "name": "@damenor/react-components-common",
   "version": "1.0.0",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
