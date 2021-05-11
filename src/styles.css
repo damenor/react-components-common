@@ -1,0 +1,12 @@
+:root {
+  --color-dark: #111;
+  --color-gray: #aaa;
+  --color-gray-dark1: #666;
+  --color-gray-dark2: #999;
+  --color-gray-light1: #ccc;
+  --color-gray-light2: #eee;
+  --color-light: #fff;
+  --color-danger: #e74c3c;
+  --color-success: #1abc9c;
+  --color-warning: #f39c12;
+}

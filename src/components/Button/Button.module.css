@@ -1,0 +1,67 @@
+:root {
+  --button-padding: 0.5rem 1rem;
+  --button-color: #fff;
+  --button-color-error: #fff;
+  --button-color-success: #fff;
+  --button-font-size: 1.25rem;
+  --button-background-color: #111;
+  --button-background-color-error: #e74c3c;
+  --button-background-color-success: #1abc9c;
+  --button-border-radius: 0.25rem;
+  --button-border-radius-rounded: 2rem;
+  --button-border-color: #222;
+  --button-border-width: 3px;
+}
+
+.button {
+  padding: var(--button-padding);
+  color: var(--button-color);
+  font-size: var(--button-font-size);
+  background-color: var(--button-background-color);
+  border-radius: var(--button-border-radius);
+  border-color: var(--button-border-color);
+  border-width: var(--button-border-width);
+  border-style: solid;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
+.button.button--error {
+  color: var(--button-color-error);
+  background-color: var(--button-background-color-error);
+  border-color: var(--button-background-color-error);
+}
+
+.button.button--success {
+  color: var(--button-color-success);
+  background-color: var(--button-background-color-success);
+  border-color: var(--button-background-color-success);
+}
+
+.button.button--error.button--outline {
+  color: var(--button-background-color-error);
+  border-color: var(--button-background-color-error);
+}
+
+.button.button--success.button--outline {
+  color: var(--button-background-color-success);
+  border-color: var(--button-background-color-success);
+}
+
+.button.button--rounded {
+  border-radius: var(--button-border-radius-rounded);
+}
+
+.button.button--rounded {
+  border-radius: var(--button-border-radius-rounded);
+}
+
+.button.button--outline {
+  background-color: transparent;
+  color: var(--button-background-color);
+  border-color: var(--button-background-color);
+}

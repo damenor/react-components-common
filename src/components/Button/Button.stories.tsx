@@ -6,34 +6,28 @@ export default {
   title: 'Button',
   component: Button,
   description: `A button.`,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-    color: { control: 'color' },
-    primary: { control: 'boolean' },
-  },
+  argTypes: {},
 } as Meta
 
-//👇 We create a “template” of how args map to rendering
 const Template: Story<ButtonProps> = (args) => <Button {...args}>Click me</Button>
 
-//👇 Each story then reuses that template
 export const Default = Template.bind({})
 Default.args = {}
 
-export const Primary = Template.bind({})
-Primary.args = {
-  primary: true,
-}
+export const Error = Template.bind({})
+Error.args = { error: true }
 
-export const CustomBackground = Template.bind({})
-CustomBackground.args = {
-  backgroundColor: '#A78BFA',
-}
+export const Success = Template.bind({})
+Success.args = { success: true }
 
-export const CustomFontColor = Template.bind({})
-CustomFontColor.args = {
-  color: '#1E40AF',
-}
+export const Rounded = Template.bind({})
+Rounded.args = { rounded: true }
+
+export const Outline = Template.bind({})
+Outline.args = { outline: true }
+
+export const RoundedOutline = Template.bind({})
+RoundedOutline.args = { rounded: true, outline: true }
 
 export const OnClick = Template.bind({})
 OnClick.args = {

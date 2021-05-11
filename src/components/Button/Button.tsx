@@ -1,33 +1,46 @@
 import * as React from 'react'
+import { getClassName } from '../../utils/getClassName'
+
+import './Button.module.css'
 
 export interface ButtonProps {
   children: React.ReactNode
-  primary?: boolean
   onClick?: () => void
-  backgroundColor?: string
-  color?: string
+  className?: string
+  type?: 'button' | 'reset' | 'submit' 
+  style?: React.CSSProperties
+  rounded?: boolean
+  error?: boolean
+  success?: boolean
+  outline?: boolean
+  ref?: any
 }
 
-export const Button = ({
+export const Button = React.forwardRef(({
   children,
-  primary = false,
   onClick,
-  backgroundColor = '#D1D5DB',
-  color = '#1F2937',
-}: ButtonProps): JSX.Element => {
-  const buttonStyles = {
-    fontWeight: 700,
-    padding: '10px 20px',
-    border: 0,
-    cursor: 'pointer',
-    display: 'inline-block',
-    lineHeight: 1,
-    backgroundColor: primary ? '#2563EB' : backgroundColor,
-    color: primary ? '#F3F4F6' : color,
-  }
+  className,
+  type = 'button',
+  style = {},
+  error = false,
+  success = false,
+  rounded = false,
+  outline = false,
+}: ButtonProps, ref: any): JSX.Element => {
+
   return (
-    <button type="button" onClick={onClick} style={buttonStyles}>
-      {children}
+    <button 
+      ref={ref}
+      className={getClassName({
+        defaultClass: 'button',
+        className,
+        conditionals: { rounded, outline, error, success },
+      })}
+      type={type} 
+      style={style}
+      onClick={onClick}>
+        {children}
     </button>
   )
-}
+
+})
