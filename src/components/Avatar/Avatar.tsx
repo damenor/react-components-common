@@ -20,11 +20,11 @@ export const Avatar = ({
   variant = 'normal'
 }: AvatarProps): JSX.Element => {
 
-  const defaultStyles = React.useMemo(() => {
-   let styles = { ...style } 
-   if(urlImage) styles = { ...styles, backgroundImage: `url(${urlImage})`} 
-   return styles
-  }, [style, urlImage])
+  const defaultStyles = React.useCallback(() => {
+    let styles = { ...style } 
+    if(urlImage) styles = { ...styles, backgroundImage: `url(${urlImage})`} 
+    return styles
+   }, [urlImage, style])
 
   return (
     <div 
@@ -33,7 +33,7 @@ export const Avatar = ({
         className,
         conditionals: { [variant]: true, letter: letter ? true : false }
       })}
-      style={defaultStyles}>
+      style={defaultStyles()}>
         { letter && <span className="avatar__letter" >{letter}</span> }
     </div>
   )

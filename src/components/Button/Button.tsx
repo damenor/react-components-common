@@ -9,9 +9,11 @@ export interface ButtonProps {
   className?: string
   type?: 'button' | 'reset' | 'submit' 
   style?: React.CSSProperties
-  rounded?: boolean
   error?: boolean
   success?: boolean
+  variant?: 'primary' | 'secondary' | 'tertuary'
+  clear?: boolean
+  rounded?: boolean
   outline?: boolean
   ref?: any
 }
@@ -24,8 +26,10 @@ export const Button = React.forwardRef(({
   style = {},
   error = false,
   success = false,
+  clear = false,
   rounded = false,
   outline = false,
+  variant = 'primary'
 }: ButtonProps, ref: any): JSX.Element => {
 
   return (
@@ -34,7 +38,14 @@ export const Button = React.forwardRef(({
       className={getClassName({
         defaultClass: 'button',
         className,
-        conditionals: { rounded, outline, error, success },
+        conditionals: { 
+          clear, 
+          rounded, 
+          outline, 
+          error, 
+          success,
+          [variant]: true
+        },
       })}
       type={type} 
       style={style}

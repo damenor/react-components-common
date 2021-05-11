@@ -27,7 +27,10 @@ export default {
     peerDepsExternal(),
     resolve(),
     commonjs(),
-    scss(),
+    scss({
+      output: 'lib/styles.min.css',
+      outputStyle: 'compressed'
+    }),
     typescript({
       exclude: ['**/*.stories.tsx', '**/*.test.tsx'],
     }),

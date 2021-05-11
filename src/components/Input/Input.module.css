@@ -1,5 +1,6 @@
 :root {
   --input-padding: 0.5rem;
+  --input-padding-rounded: 0.5rem 1rem;
   --input-color: #222;
   --input-color-error: #e74c3c;
   --input-color-success: #1abc9c;
@@ -43,5 +44,6 @@ input[type="color"].input {
 }
 
 .input.input--rounded {
+  padding: var(--input-padding-rounded);
   border-radius: var(--input-border-radius-rounded);
 }

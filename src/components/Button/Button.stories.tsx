@@ -14,11 +14,20 @@ const Template: Story<ButtonProps> = (args) => <Button {...args}>Click me</Butto
 export const Default = Template.bind({})
 Default.args = {}
 
+export const Secondary = Template.bind({})
+Secondary.args = { variant: 'secondary' }
+
+export const Tertuary = Template.bind({})
+Tertuary.args = { variant: 'tertuary' }
+
 export const Error = Template.bind({})
 Error.args = { error: true }
 
 export const Success = Template.bind({})
 Success.args = { success: true }
+
+export const Clear = Template.bind({})
+Clear.args = { clear: true }
 
 export const Rounded = Template.bind({})
 Rounded.args = { rounded: true }
